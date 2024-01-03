@@ -20,10 +20,11 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const InputSearch = styled(InputBase)(({ theme }) => ({
-  backgroundColor: "white",
+  backgroundColor: theme.palette.mode === 'light' ? "white" : 'black',
   padding: "0 10px",
   borderRadius: theme.shape.borderRadius,
   width:'40vw',
+  color:theme.palette.mode === 'light' ? 'black' :'white',
 }));
 
 const Icons = styled(Box)(({ theme }) => ({
@@ -117,11 +118,13 @@ const Navbar = () => {
           vertical: "top",
           horizontal: "right",
         }}
+        style={{ top:40, left:0, position: 'absolute' }}
       >
         <MenuItem>Profile</MenuItem>
         <MenuItem>My account</MenuItem>
         <MenuItem>Logout</MenuItem>
       </Menu>
+      
     </AppBar>
   );
 };
